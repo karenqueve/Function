@@ -127,7 +127,7 @@ console.log(averageWord(mixedElements));*/
 //}
 //newDuplicate(duplicates);
 
-//**Iteración #7: Buscador de nombres**
+//*Iteración #7: Buscador de nombres**
 //Crea una función que reciba por parámetro un array 
 //y el valor que desea comprobar que existe dentro de dicho array - 
 //comprueba si existe el elemento, en caso que existan nos devuelve un true y la posición de dicho elemento 
@@ -147,22 +147,22 @@ const nameFinder = [
   'Marc'
 ];
 
+function finderName (namesArray, searchName) {
 
-function finderName(param) {
-
-  for (const names of param) {
-   
-    if(names.includes('Peggy')){
-     (names.indexOf('Peggy'))
-    }
-     ///else{
-     // (!names.includes('Peggy'));
+  let result = false;
+  for (let index = 0; index < namesArray.length; index++) {
+    if (namesArray[index] === searchName) {
       
-    // }
-   }
+      result = index;
+    }
   }
-  
-console.log(finderName(nameFinder, 'Peggy'));
+  return result;
+}
+
+console.log(finderName(nameFinder, "Natasha"));
+console.log(finderName(nameFinder, "Elas"));
+console.log(finderName(nameFinder, "Xabier"));
+
 
 /**Iteration #8: Contador de repeticiones**
 
@@ -170,7 +170,7 @@ Crea una función
 que nos devuelva el número de veces que se repite 
 cada una de las palabras que lo conforma.  
 
-const counterWords = [
+/*const counterWords = [
   'code',
   'repeat',
   'eat',
@@ -183,8 +183,19 @@ const counterWords = [
   'upgrade',
   'code'
 ];
-function repeatCounter(param) {
 
+ function repeatCounter(list) {
 
+    const count = {};
+     list.forEach((word) => {
+  if (count[word] === undefined) {
+    count[word] = 1;
+  } else {
+    count[word] = count[word] + 1;
+  }
+});
+return count;
 }
-*/
+
+console.log(repeatCounter(counterWords));
+ */
